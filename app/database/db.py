@@ -8,11 +8,10 @@ load_dotenv()
 DB_NAME = os.getenv("DB_NAME", "transactions")
 DB_USER = os.getenv("DB_USER", "postgres")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
-DB_PORT = os.getenv("DB_PORT", "5432")
+DB_PORT = os.getenv("DB_PORT", "5433")
 DB_HOST = os.getenv("DB_HOST", "db")
 
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-
 database = Database(DATABASE_URL)
 
 metadata = MetaData()
@@ -20,7 +19,7 @@ metadata = MetaData()
 transactions = Table(
     "transactions",
     metadata,
-    Column("id", Integer, primary_key=True, index=True, autoIncrement=True),
+    Column("id", Integer, primary_key=True, index=True, autoincrement=True),
     Column("app_id", Integer),
     Column("xref", String),
     Column("settlement_date", String),
