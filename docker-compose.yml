@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  web:
-    build:
-      context: .
-    ports:
-      - ${API_PORT}:8000
-    depends_on:
-      - db
+  # web:
+  #   build:
+  #     context: .
+  #   ports:
+  #     - ${API_PORT}:8000
+  #   depends_on:
+  #     - db
 
   db:
     image: postgres:latest
