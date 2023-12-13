@@ -1,5 +1,5 @@
 from databases import Database
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float, Date, DateTime
 from dotenv import load_dotenv
 import os
 
@@ -22,7 +22,7 @@ transactions = Table(
     Column("id", Integer, primary_key=True, index=True, autoincrement=True),
     Column("app_id", Integer),
     Column("xref", String),
-    Column("settlement_date", String),
+    Column("settlement_date", Date),
     Column("broker", String),
     Column("sub_broker", String),
     Column("borrower_name", String),
@@ -30,6 +30,8 @@ transactions = Table(
     Column("comm_rate", Float),
     Column("upfront", Float),
     Column("upfront_incl_gst", Float),
+    Column("tier", Integer),
+    Column("created_at", DateTime),
 )
 
 engine = create_engine(DATABASE_URL)
