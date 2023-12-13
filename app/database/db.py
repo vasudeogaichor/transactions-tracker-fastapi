@@ -12,6 +12,7 @@ DB_PORT = os.getenv("DB_PORT", "5433")
 DB_HOST = os.getenv("DB_HOST", "db")
 
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+
 database = Database(DATABASE_URL)
 
 metadata = MetaData()
@@ -21,7 +22,7 @@ transactions = Table(
     metadata,
     Column("id", Integer, primary_key=True, index=True, autoincrement=True),
     Column("app_id", Integer),
-    Column("xref", String),
+    Column("xref", Integer),
     Column("settlement_date", Date),
     Column("broker", String),
     Column("sub_broker", String),

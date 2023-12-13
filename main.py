@@ -4,7 +4,6 @@ from app.routers.transactions import router as transaction_router
 from app.database.db import database
 from alembic import command
 from alembic.config import Config as AlembicConfig
-import time
 
 app = FastAPI()
 
@@ -22,7 +21,6 @@ app.include_router(transaction_router)
 
 #     response = await call_next(request)
 #     return response
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
