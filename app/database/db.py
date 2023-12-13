@@ -26,6 +26,7 @@ transactions = Table(
     Column("broker", String),
     Column("sub_broker", String),
     Column("borrower_name", String),
+    Column("description", String),
     Column("total_loan_amount", Float),
     Column("comm_rate", Float),
     Column("upfront", Float),
