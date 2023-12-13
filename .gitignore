@@ -1,0 +1,55 @@
+# Virtual environment
+venv/
+
+# Docker
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+db.sqlite
+*.sqlite
+*.db
+
+# Environment variables
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Python bytecode
+*.pyc
+__pycache__/
+
+# Logs
+*.log
+
+# Dependency directories
+lib/
+lib64/
+include/
+bin/
+share/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Cache files
+__pycache__/
+.cachefile
+
+# Editor-specific files
+*.swp
+*~
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints/
