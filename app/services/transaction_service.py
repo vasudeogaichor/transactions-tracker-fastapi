@@ -1,5 +1,4 @@
 from sqlalchemy import select
-from fastapi import HTTPException
 from app.database.db import database, transactions
 from app.models.transaction import Transaction, TransactionCreate
 from datetime import datetime
