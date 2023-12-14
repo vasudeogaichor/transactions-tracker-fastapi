@@ -1,13 +1,18 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from app.models.transaction import Transaction, TransactionCreate
 from app.services.transaction_service import create_transaction #, get_transaction, update_transaction, delete_transaction, list_transactions
-    
+from app.dependencies import get_database
 
 router = APIRouter()
 
-@router.post("/transactions/", response_model=Transaction)
+@router.post("/transactions/", response_model=Transaction, dependencies=[Depends(get_database)])
 async def create_transaction_route(transaction: TransactionCreate):
-    return await create_transaction(transaction)
+    try:
+        created_transaction = await create_transaction(transaction)
+        return created_transaction 
+    except Exception as e:
+        print('Error - ', e)
+        raise HTTPException(status_code=500, detail="Error while creating new transaction")
 
 # @router.get("/transactions/{transaction_id}", response_model=Transaction)
 # async def get_transaction_route(transaction_id: int):

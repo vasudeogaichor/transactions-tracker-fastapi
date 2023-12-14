@@ -1,23 +1,24 @@
 from sqlalchemy import select
+from fastapi import HTTPException
 from app.database.db import database, transactions
 from app.models.transaction import Transaction, TransactionCreate
 from datetime import datetime
 
 tiers_mapping = {1: 100000, 2: 50000, 3: 10000}
 
+
 async def create_transaction(transaction: TransactionCreate):
-    try:
-        await database.connect()
-        tier = next((t for t, val in tiers_mapping.items() if transaction.total_loan_amount > val), None)
-        print('tier - ', tier)
-        
-        # input_date = datetime.strptime(transaction.settlement_date, "%d/%m/%Y")
-        transaction.settlement_date = transaction.settlement_date.strftime("%Y-%m-%d")
-        print('transaction - ', transaction)    
-        query = transactions.insert().values(
+    tier = next(
+        (t for t, val in tiers_mapping.items() if transaction.total_loan_amount > val),
+        None,
+    )
+
+    query = (
+        transactions.insert()
+        .values(
             app_id=transaction.app_id,
             xref=transaction.xref,
-            # settlement_date=transaction.settlement_date,
+            settlement_date=transaction.settlement_date,
             broker=transaction.broker,
             sub_broker=transaction.sub_broker,
             borrower_name=transaction.borrower_name,
@@ -26,17 +27,15 @@ async def create_transaction(transaction: TransactionCreate):
             comm_rate=transaction.comm_rate,
             upfront=transaction.upfront,
             upfront_incl_gst=transaction.upfront_incl_gst,
-            tier=tier
-            ).returning(transactions)
-        print(query)
-        last_txn = await database.fetch_one(query)
-        print('last_txn - ', dict(last_txn))
-        response = dict(last_txn)
+            tier=tier,
+        )
+        .returning(transactions)
+    )
 
-        return response
-    except Exception as e:
-        print('e - ', e)
-        return {"Error: Unable to create new transaction"}
+    last_txn = await database.fetch_one(query)
+    response = dict(last_txn)
+
+    return response
 
 
 # async def get_item(item_id: int):
