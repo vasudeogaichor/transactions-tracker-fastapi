@@ -1,4 +1,4 @@
-from sqlalchemy import select, func
+from sqlalchemy import select, func, cast, Integer
 from app.database.db import database, transactions
 from app.models.transaction import Transaction, TransactionCreate
 from app.models.stats import Stats
@@ -128,6 +128,9 @@ async def get_report(broker, period):
                     func.sum(transactions.c.total_loan_amount).label(
                         "sum_total_loan_amount"
                     ),
+                    func.sum(cast(transactions.c.tier == 1, Integer)).label("tier_1_count"),
+                    func.sum(cast(transactions.c.tier == 2, Integer)).label("tier_2_count"),
+                    func.sum(cast(transactions.c.tier == 3, Integer)).label("tier_3_count"),
                 ]
             ).group_by(transactions.c.settlement_date)
             query = apply_broker_filter(query, broker)
@@ -138,6 +141,9 @@ async def get_report(broker, period):
                         "max_total_loan_amount": res.max_total_loan_amount,
                         "min_total_loan_amount": res.min_total_loan_amount,
                         "sum_total_loan_amount": res.sum_total_loan_amount,
+                        "tier_1_count": res.tier_1_count,
+                        "tier_2_count": res.tier_2_count,
+                        "tier_3_count": res.tier_3_count,
                     }
                 }
                 for res in result
@@ -158,6 +164,9 @@ async def get_report(broker, period):
                     func.sum(transactions.c.total_loan_amount).label(
                         "sum_total_loan_amount"
                     ),
+                    func.sum(cast(transactions.c.tier == 1, Integer)).label("tier_1_count"),
+                    func.sum(cast(transactions.c.tier == 2, Integer)).label("tier_2_count"),
+                    func.sum(cast(transactions.c.tier == 3, Integer)).label("tier_3_count"),
                 ]
             ).group_by("week_start")
             query = apply_broker_filter(query, broker)
@@ -169,6 +178,9 @@ async def get_report(broker, period):
                         "max_total_loan_amount": res.max_total_loan_amount,
                         "min_total_loan_amount": res.min_total_loan_amount,
                         "sum_total_loan_amount": res.sum_total_loan_amount,
+                        "tier_1_count": res.tier_1_count,
+                        "tier_2_count": res.tier_2_count,
+                        "tier_3_count": res.tier_3_count,
                     }
                 }
                 for res in result
@@ -189,6 +201,9 @@ async def get_report(broker, period):
                     func.sum(transactions.c.total_loan_amount).label(
                         "sum_total_loan_amount"
                     ),
+                    func.sum(cast(transactions.c.tier == 1, Integer)).label("tier_1_count"),
+                    func.sum(cast(transactions.c.tier == 2, Integer)).label("tier_2_count"),
+                    func.sum(cast(transactions.c.tier == 3, Integer)).label("tier_3_count"),
                 ]
             ).group_by("month_start")
             query = apply_broker_filter(query, broker)
@@ -199,6 +214,9 @@ async def get_report(broker, period):
                         "max_total_loan_amount": res.max_total_loan_amount,
                         "min_total_loan_amount": res.min_total_loan_amount,
                         "sum_total_loan_amount": res.sum_total_loan_amount,
+                        "tier_1_count": res.tier_1_count,
+                        "tier_2_count": res.tier_2_count,
+                        "tier_3_count": res.tier_3_count,
                     }
                 }
                 for res in result
