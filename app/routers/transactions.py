@@ -79,10 +79,10 @@ async def create_get_stats_route(
     dependencies=[Depends(get_database)],
 )
 async def create_broker_report_route(broker: str = None, period: str = "daily"):
-    # try:
+    try:
         report = await get_report(broker, period)
         return report
-    # except Exception as e:
+    except Exception as e:
         print("Error - ", e)
         raise HTTPException(status_code=500, detail="Error generating report")
 
