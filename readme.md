@@ -147,111 +147,256 @@ curl -X GET \
     "monthly": [
         {
             "2023-10-01": {
-                "max_total_loan_amount": 77590.87,
-                "min_total_loan_amount": 23244.74,
-                "sum_total_loan_amount": 752158.3099999999
+                "max_total_loan_amount": 89199.0,
+                "min_total_loan_amount": 15530.0,
+                "sum_total_loan_amount": 4158581.1400000006,
+                "tier_1_count": 1,
+                "tier_2_count": 34,
+                "tier_3_count": 55
             }
         }
     ],
     "weekly": [
         {
-            "2023-10-09": {
-                "max_total_loan_amount": 77590.87,
-                "min_total_loan_amount": 30490.0,
-                "sum_total_loan_amount": 207237.12
+            "2023-10-02": {
+                "max_total_loan_amount": 89199.0,
+                "min_total_loan_amount": 26390.0,
+                "sum_total_loan_amount": 995943.2599999999,
+                "tier_1_count": 0,
+                "tier_2_count": 7,
+                "tier_3_count": 14
             }
         },
         {
             "2023-10-16": {
-                "max_total_loan_amount": 23244.74,
-                "min_total_loan_amount": 23244.74,
-                "sum_total_loan_amount": 23244.74
-            }
-        },
-        {
-            "2023-10-02": {
-                "max_total_loan_amount": 76193.0,
-                "min_total_loan_amount": 36390.0,
-                "sum_total_loan_amount": 148973.0
+                "max_total_loan_amount": 54588.07,
+                "min_total_loan_amount": 17168.11,
+                "sum_total_loan_amount": 643938.8999999999,
+                "tier_1_count": 1,
+                "tier_2_count": 3,
+                "tier_3_count": 12
             }
         },
         {
             "2023-10-23": {
-                "max_total_loan_amount": 67535.7,
-                "min_total_loan_amount": 34490.0,
-                "sum_total_loan_amount": 372703.44999999995
+                "max_total_loan_amount": 83794.51,
+                "min_total_loan_amount": 17628.34,
+                "sum_total_loan_amount": 1389404.69,
+                "tier_1_count": 0,
+                "tier_2_count": 11,
+                "tier_3_count": 19
+            }
+        },
+        {
+            "2023-10-09": {
+                "max_total_loan_amount": 81620.0,
+                "min_total_loan_amount": 15530.0,
+                "sum_total_loan_amount": 1069360.48,
+                "tier_1_count": 0,
+                "tier_2_count": 12,
+                "tier_3_count": 10
+            }
+        },
+        {
+            "2023-10-30": {
+                "max_total_loan_amount": 59933.81,
+                "min_total_loan_amount": 59933.81,
+                "sum_total_loan_amount": 59933.81,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 0
             }
         }
     ],
     "daily": [
         {
+            "2023-10-24": {
+                "max_total_loan_amount": 83794.51,
+                "min_total_loan_amount": 17845.41,
+                "sum_total_loan_amount": 273312.12,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 4
+            }
+        },
+        {
+            "2023-10-17": {
+                "max_total_loan_amount": 54588.07,
+                "min_total_loan_amount": 17168.11,
+                "sum_total_loan_amount": 496482.92,
+                "tier_1_count": 1,
+                "tier_2_count": 1,
+                "tier_3_count": 11
+            }
+        },
+        {
+            "2023-10-18": {
+                "max_total_loan_amount": 54342.99,
+                "min_total_loan_amount": 54342.99,
+                "sum_total_loan_amount": 108685.98,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 0
+            }
+        },
+        {
             "2023-10-10": {
-                "max_total_loan_amount": 43890.0,
-                "min_total_loan_amount": 43890.0,
-                "sum_total_loan_amount": 43890.0
+                "max_total_loan_amount": 73400.07,
+                "min_total_loan_amount": 15530.0,
+                "sum_total_loan_amount": 295420.05000000005,
+                "tier_1_count": 0,
+                "tier_2_count": 4,
+                "tier_3_count": 2
             }
         },
         {
             "2023-10-04": {
-                "max_total_loan_amount": 36390.0,
+                "max_total_loan_amount": 57610.0,
                 "min_total_loan_amount": 36390.0,
-                "sum_total_loan_amount": 36390.0
+                "sum_total_loan_amount": 172510.0,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 3
             }
         },
         {
             "2023-10-27": {
                 "max_total_loan_amount": 67535.7,
-                "min_total_loan_amount": 47022.46,
-                "sum_total_loan_amount": 235049.1
+                "min_total_loan_amount": 25527.81,
+                "sum_total_loan_amount": 405743.01,
+                "tier_1_count": 0,
+                "tier_2_count": 4,
+                "tier_3_count": 4
             }
         },
         {
-            "2023-10-12": {
-                "max_total_loan_amount": 77590.87,
-                "min_total_loan_amount": 77590.87,
-                "sum_total_loan_amount": 77590.87
+            "2023-10-26": {
+                "max_total_loan_amount": 56886.19,
+                "min_total_loan_amount": 28390.0,
+                "sum_total_loan_amount": 161656.19,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 3
             }
         },
         {
-            "2023-10-03": {
-                "max_total_loan_amount": 36390.0,
-                "min_total_loan_amount": 36390.0,
-                "sum_total_loan_amount": 36390.0
+            "2023-10-06": {
+                "max_total_loan_amount": 59060.2,
+                "min_total_loan_amount": 35380.0,
+                "sum_total_loan_amount": 130150.2,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 2
+            }
+        },
+        {
+            "2023-10-09": {
+                "max_total_loan_amount": 81620.0,
+                "min_total_loan_amount": 24171.58,
+                "sum_total_loan_amount": 274484.56,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 4
+            }
+        },
+        {
+            "2023-10-30": {
+                "max_total_loan_amount": 59933.81,
+                "min_total_loan_amount": 59933.81,
+                "sum_total_loan_amount": 59933.81,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 0
+            }
+        },
+        {
+            "2023-10-23": {
+                "max_total_loan_amount": 70744.0,
+                "min_total_loan_amount": 17628.34,
+                "sum_total_loan_amount": 136091.49,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 2
             }
         },
         {
             "2023-10-05": {
-                "max_total_loan_amount": 76193.0,
-                "min_total_loan_amount": 76193.0,
-                "sum_total_loan_amount": 76193.0
+                "max_total_loan_amount": 81600.0,
+                "min_total_loan_amount": 26390.0,
+                "sum_total_loan_amount": 304373.0,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 4
             }
         },
         {
             "2023-10-25": {
-                "max_total_loan_amount": 51774.35,
+                "max_total_loan_amount": 67085.07,
                 "min_total_loan_amount": 34490.0,
-                "sum_total_loan_amount": 86264.35
+                "sum_total_loan_amount": 412601.88,
+                "tier_1_count": 0,
+                "tier_2_count": 3,
+                "tier_3_count": 6
             }
         },
         {
             "2023-10-11": {
                 "max_total_loan_amount": 55266.25,
                 "min_total_loan_amount": 30490.0,
-                "sum_total_loan_amount": 85756.25
+                "sum_total_loan_amount": 189056.25,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 2
             }
         },
         {
-            "2023-10-24": {
-                "max_total_loan_amount": 51390.0,
-                "min_total_loan_amount": 51390.0,
-                "sum_total_loan_amount": 51390.0
+            "2023-10-02": {
+                "max_total_loan_amount": 68586.46,
+                "min_total_loan_amount": 27160.0,
+                "sum_total_loan_amount": 235696.06,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 3
             }
         },
         {
-            "2023-10-17": {
-                "max_total_loan_amount": 23244.74,
-                "min_total_loan_amount": 23244.74,
-                "sum_total_loan_amount": 23244.74
+            "2023-10-12": {
+                "max_total_loan_amount": 77590.87,
+                "min_total_loan_amount": 19170.0,
+                "sum_total_loan_amount": 150537.37,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 1
+            }
+        },
+        {
+            "2023-10-03": {
+                "max_total_loan_amount": 89199.0,
+                "min_total_loan_amount": 27625.0,
+                "sum_total_loan_amount": 153214.0,
+                "tier_1_count": 0,
+                "tier_2_count": 1,
+                "tier_3_count": 2
+            }
+        },
+        {
+            "2023-10-16": {
+                "max_total_loan_amount": 38770.0,
+                "min_total_loan_amount": 38770.0,
+                "sum_total_loan_amount": 38770.0,
+                "tier_1_count": 0,
+                "tier_2_count": 0,
+                "tier_3_count": 1
+            }
+        },
+        {
+            "2023-10-13": {
+                "max_total_loan_amount": 73184.25,
+                "min_total_loan_amount": 20093.0,
+                "sum_total_loan_amount": 159862.25,
+                "tier_1_count": 0,
+                "tier_2_count": 2,
+                "tier_3_count": 1
             }
         }
     ]
