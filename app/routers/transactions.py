@@ -1,8 +1,9 @@
 import os
-from fastapi import APIRouter, HTTPException, Depends, File, UploadFile
+from fastapi import APIRouter, HTTPException, Depends, File, UploadFile, Query
 from app.models.transaction import Transaction, TransactionCreate
+from app.models.stats import Stats
 from app.services.transaction_service import (
-    create_transaction,
+    create_transaction, get_loan_stats
 )  # , get_transaction, update_transaction, delete_transaction, list_transactions
 from app.services.file_service import (
     extract_data_from_pdf,
@@ -53,6 +54,22 @@ async def create_transaction_route(transaction: TransactionCreate):
             status_code=500, detail="Error while creating new transaction"
         )
 
+@router.get(
+    "/transactions/stats", response_model=Stats, dependencies=[Depends(get_database)]
+)
+async def create_get_stats_route(
+    start_date: str = None,
+    end_date: str = None,
+    broker: str = None,
+):
+    try:
+        stats = await get_loan_stats(start_date, end_date, broker)
+        return stats
+    except Exception as e:
+        print('Error - ', e)
+        raise HTTPException(
+            status_code=500, detail="Error while getting stats"
+        )
 
 # @router.get("/transactions/{transaction_id}", response_model=Transaction)
 # async def get_transaction_route(transaction_id: int):
