@@ -12,7 +12,6 @@ from app.dependencies import get_database
 
 router = APIRouter()
 
-
 @router.post("/files/upload/")
 async def upload_pdf_route(
     file: UploadFile = File(...), database=Depends(get_database)

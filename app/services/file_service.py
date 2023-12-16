@@ -54,6 +54,10 @@ def extract_data_from_pdf(file_path):
     merged_df.columns = ['app_id', 'xref', 'settlement_date', 'broker', 'sub_broker', 'borrower_name',
                         'description', 'total_loan_amount', 'comm_rate', 'upfront', 'upfront_incl_gst']
     
+    # deduplicate the dataframe based on "xref", "total_loan_amount"
+    columns_to_check_duplicates = ['xref', 'total_loan_amount']
+    merged_df = merged_df.drop_duplicates(subset=columns_to_check_duplicates, keep='last')
+
     transactions = merged_df.to_dict(orient='records')
     
     for record in transactions:
