@@ -9,19 +9,6 @@ app = FastAPI()
 
 app.include_router(transaction_router)
 
-# app.add_middleware(PayloadParsingMiddleware)
-
-# @app.middleware("http")
-# async def log_request_payload(request: Request, call_next):
-#     try:
-#         body = await request.body()
-#         print('Request Payload:', body)
-#     except Exception as e:
-#         print(f'Error reading request payload: {e}')
-
-#     response = await call_next(request)
-#     return response
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     alembic_config = AlembicConfig("alembic.ini")
